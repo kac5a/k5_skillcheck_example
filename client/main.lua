@@ -10,14 +10,11 @@ Citizen.CreateThread(function()
 			if IsControlJustReleased(0, 38) and #(coords - target) < 1 then
 				TaskStartScenarioAtPosition(GetPlayerPed(-1), "PROP_HUMAN_BUM_BIN", coords, GetEntityHeading(PlayerPedId()), 0, 0, false)
 				Citizen.Wait(1000)
-				local succeeded = exports["k5_skillcheck"]:skillCheck()
-				if succeeded then
+				if exports["k5_skillcheck"]:skillCheck() then
 					Citizen.Wait(1000)
-					local succeeded2 = exports["k5_skillcheck"]:skillCheck()
-					if succeeded2 then
+					if exports["k5_skillcheck"]:skillCheck() then
 						Citizen.Wait(1000)
-						local succeeded3 = exports["k5_skillcheck"]:skillCheck()
-						if succeeded3 then
+						if exports["k5_skillcheck"]:skillCheck() then
 							print("SUCCESS")
 							ClearPedTasks(PlayerPedId())
 						else
